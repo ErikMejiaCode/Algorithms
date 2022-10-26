@@ -100,8 +100,17 @@ const expected1 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  * @param {Array<number>} nums
  * @returns {Array<number>} The given array after being sorted.
  */
-function insertionSort(nums = []) { 
-
+function insertionSort(nums = []) {
+    for (i = 1; i < nums.length; i++) {
+        let current = nums[i]
+        let j = i - 1
+        while (j >= 0 && current < nums[j]) {
+            nums[j + 1] = num[j]
+            j--
+        }
+        nums[j + 1] = current
+    }
+    return nums
 }
 
 console.log(selectionSort(numsOrdered1))
