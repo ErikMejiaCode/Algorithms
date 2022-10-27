@@ -47,26 +47,26 @@ const expectedMerge4 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
  *    both given halves.
  */
 function merge(left = [], right = []) {
-    let arr2 = [];
+    let newArray = [];
     let i = 0;
     let j = 0;
     while (i < left.length || j < right.length) {
         if (left[i] <= right[j]) {
-            arr2.push(left[i]);
+            newArray.push(left[i]);
             i++;
         }
         else {
-            arr2.push(right[j]);
+            newArray.push(right[j]);
             j++;
         }
     }
-    return arr2;
+    return newArray;
 }
 
-console.log(merge(sortedA1, sortedB1));
-console.log(merge(sortedA2, sortedB2));
-console.log(merge(sortedA3, sortedB3));
-console.log(merge(sortedA4, sortedB4));
+// console.log(merge(sortedA1, sortedB1));
+// console.log(merge(sortedA2, sortedB2));
+// console.log(merge(sortedA3, sortedB3));
+// console.log(merge(sortedA4, sortedB4));
 
 
 // mergeSort
