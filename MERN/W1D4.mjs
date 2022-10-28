@@ -1,34 +1,28 @@
 /* 
-    Params: nums, left, right
+Params: nums, left, right
     - left and right are indexes, for now, left will be 0, and right will be
         the last idx.
     - later these params will be used to specify a sub section of the array to
         partition.
-
-    Steps:
-
-    1. Pick an number out of the arr to be your pivot value
+Steps:
+1. Pick an number out of the arr to be your pivot value
     - usually the middle idx but can be any.
-
-    2. Partition the array IN PLACE such that all values less than the pivot
+2. Partition the array IN PLACE such that all values less than the pivot
     value are to the left of it and all values greater than the pivot value
     are to the right (not perfectly sorted).
-
-    3. return: the index where the left section of smaller items ends.
-
-    "Choosing a random pivot minimizes the chance that you will encounter
-    worst-case O(n^2) performance (always choosing first or last would cause
-    worst-case performance for nearly-sorted or nearly-reverse-sorted data).
-    Choosing the middle element would also be acceptable in the majority of
-    cases."
-    https://stackoverflow.com/questions/164163/quicksort-choosing-the-pivot
+3. return: the index where the left section of smaller items ends.
+"Choosing a random pivot minimizes the chance that you will encounter
+worst-case O(n^2) performance (always choosing first or last would cause
+worst-case performance for nearly-sorted or nearly-reverse-sorted data).
+Choosing the middle element would also be acceptable in the majority of
+cases."
+https://stackoverflow.com/questions/164163/quicksort-choosing-the-pivot
 */
 
 const nums1 = [11, 8, 14, 3, 6, 2, 7];
 /* 
 There are many possible answers for nums1 depending on which number is chosen
 as the pivot.
-
 E.g., if 3 is chosen as the pivot, the below are some solutions because
 numbers smaller than 3 are to the left and larger numbers are to the right
 [2, 3, 7, 6, 11, 8, 14]
@@ -39,6 +33,7 @@ numbers smaller than 3 are to the left and larger numbers are to the right
 const nums2 = [11, 8, 14, 3, 3, 3, 6, 2, 7];
 const nums3 = [1, 17, 12, 3, 9, 13, 21, 4, 27];
 const nums4 = [2, 1];
+
 /**
  * Partitions the given array in-place by selecting the number at the middle
  * index to use it as a "pivot" value, then arranges all numbers less than the
@@ -55,9 +50,7 @@ const nums4 = [2, 1];
  *    being processed.
  * @returns {Array<number>} The idx where left section of smaller items ends.
  */
-https://codingdojo.zoom.us/j/87075225025
-
-function partition(nums, leftIdx = 0, rightIdx = nums.length - 1) {
+export function partition(nums, leftIdx = 0, rightIdx = nums.length - 1) {
     const midIdx = Math.floor((leftIdx + rightIdx) / 2);
     const pivotValue = nums[midIdx];
     const tempPivotIdx = rightIdx;
@@ -98,7 +91,7 @@ function partition(nums, leftIdx = 0, rightIdx = nums.length - 1) {
     }
 }
 
-console.log(partition(nums1))
-console.log(partition(nums2))
-console.log(partition(nums3))
-console.log(partition(nums4))
+// console.log(partition(nums1))
+// console.log(partition(nums2))
+// console.log(partition(nums3))
+// console.log(partition(nums4))
